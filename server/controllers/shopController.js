@@ -50,7 +50,9 @@ const getShop = async (req, res) => {
       return res.status(404).json({ error: 'Shop not found' });
     }
 
-    res.json(shop);
+    // This line is now changed for consistency
+    res.json({ shop });
+
   } catch (error) {
     res.status(500).json({ error: 'Server error while fetching shop' });
   }
@@ -125,7 +127,7 @@ const getMyShops = async (req, res) => {
     const shops = await Shop.find({ owner: req.user._id })
       .sort({ createdAt: -1 });
 
-    res.json(shops);
+    res.json({shops});
   } catch (error) {
     res.status(500).json({ error: 'Server error while fetching your shops' });
   }

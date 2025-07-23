@@ -13,6 +13,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ShopDetails from './pages/ShopDetails';
 import Dashboard from './pages/Dashboard';
+import CreateShop from './pages/CreateShop'; // <-- 1. IMPORT
+import EditShop from './pages/EditShop';   // <-- 2. IMPORT
 
 function App() {
   return (
@@ -35,6 +37,23 @@ function App() {
                 element={
                   <ProtectedRoute requireMerchant>
                     <Dashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              {/* 3. ADD THESE TWO NEW ROUTES */}
+              <Route 
+                path="/shop/create" 
+                element={
+                  <ProtectedRoute requireMerchant>
+                    <CreateShop />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/shop/edit/:id" 
+                element={
+                  <ProtectedRoute requireMerchant>
+                    <EditShop />
                   </ProtectedRoute>
                 } 
               />

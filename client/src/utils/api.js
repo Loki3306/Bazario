@@ -46,7 +46,7 @@ export const searchShops = (params) => api.get('/shops', { params });
 export const getShopById = (id) => api.get(`/shops/${id}`);
 
 // Fetch all shops for the currently logged-in merchant (for Dashboard)
-export const getUserShops = () => api.get('/shops/me/myshops');
+export const getUserShops = () => api.get('/shops//merchant/my-shops');
 
 // Create a new shop (for CreateShop page)
 export const createShop = (shopData) => api.post('/shops', shopData);

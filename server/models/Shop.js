@@ -33,10 +33,16 @@ const shopSchema = new mongoose.Schema({
     whatsapp: String,
     email: String
   },
-  images: [{
-    url: String,
-    alt: String
-  }],
+  images: {
+    type: [{
+      url: String,
+      alt: String
+    }],
+    default: [{ 
+      url: 'https://imgs.search.brave.com/td5Jq69pdZpao4JkR-D1Z522xQ8nB4OYYqnP18bq_QU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvcHJldmll/dy0xeC8wOC8yOC9z/aG9wLXN0b3JlLWZs/YXQtaWNvbi12ZWN0/b3ItMTQyNzA4Mjgu/anBn', 
+      alt: 'Default shop image' 
+    }]
+  },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
